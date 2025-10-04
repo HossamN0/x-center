@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cairo, Roboto } from "next/font/google";
 import "@/styles/globals.css";
+import Header from "@/components/header";
 
 const cairo = Cairo({
   subsets: ["latin"],
@@ -27,8 +28,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${roboto.className}`}
+        className={`${roboto.className} min-container`}
       >
+        <Header />
         {children}
       </body>
     </html>
