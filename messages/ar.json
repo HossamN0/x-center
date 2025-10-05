@@ -10,8 +10,34 @@
         "ar": "العربية"
     },
     "form": {
-        "required": "مطلوب {{field}}",
+        "required": "مطلوب {field}",
         "invalidemail": "عنوان بريد إلكتروني غير صالح",
-        "minlength": "يجب أن تكون كلمة المرور على الأقل {{length}} حرفًا"
+        "minlength": "يجب أن تكون كلمة المرور على الأقل {length} حرفًا",
+        "welcomeBack": "مرحبا بعودتك",
+        "submit": "تأكيد",
+        "firstName": {
+            "label": "الاسم الاول",
+            "placeholder": "ادخل اسمك الاول"
+        },
+        "secondName": {
+            "label": "الاسم الثاني",
+            "placeholder": "ادخل اسمك الثاني"
+        },
+        "email": {
+            "label": "البريد الالكتروني",
+            "placeholder": "ادخل بريدك الالكتروني"
+        },
+        "phone": {
+            "label": "رقم الجوال",
+            "placeholder": "ادخل رقم جوالك"
+        },
+        "password": {
+            "label": "كلمة المرور",
+            "placeholder": "ادخل كلمة المرور"
+        },
+        "confirmPassword": {
+            "label": "تاكيد كلمة المرور",
+            "placeholder": "تاكيد كلمة المرور"
+        }
     }
 }

@@ -12,12 +12,14 @@ function InputPassword({
     name,
     register,
     required = true,
+    errors
 }: {
     placeholder: string;
     label: string;
     name: string;
     register: any;
     required?: boolean;
+    errors?: any
 }) {
 
     const t = useTranslations("form");
@@ -37,7 +39,7 @@ function InputPassword({
                         minLength: { value: 6, message: t("minlength", { length: 6 }) },
                     })}
                 />
-                <div className="absolute top-1/2 -translate-y-1/2 right-2">
+                <div className="absolute top-1/2 -translate-y-1/2 ltr:right-2 rtl:left-2">
                     <Button
                         variant={"ghost"}
                         size="icon"
@@ -49,6 +51,7 @@ function InputPassword({
                     </Button>
                 </div>
             </div>
+            {errors[name] && <Label className="text-red-500 mt-3 font-normal">{errors[name].message}</Label>}
         </div>
     )
 }

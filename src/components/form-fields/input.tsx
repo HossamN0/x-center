@@ -8,6 +8,7 @@ function Input({
     name,
     register,
     required = true,
+    errors
 }: {
     type?: string;
     placeholder: string;
@@ -15,6 +16,7 @@ function Input({
     name: string;
     register: any;
     required?: boolean;
+    errors?: any
 }) {
 
     const t = useTranslations("form");
@@ -29,9 +31,10 @@ function Input({
                 className="p-2 rounded-md border border-gray-300 w-full"
                 {...register(name, {
                     required: { value: required, message: t("required", { field: label }) },
-                    pattern: type === "email" ? { value: /^\S+@\S+$/i, message: t('invalidemail') } : undefined,
+                    pattern: type === "email" ? { value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i, message: t('invalidemail') } : undefined,
                 })}
             />
+            {errors[name] && <Label className="text-red-500 mt-3 font-normal">{errors[name].message}</Label>}
         </div>
     )
 }

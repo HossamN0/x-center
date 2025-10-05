@@ -7,12 +7,14 @@ function InputPhone({
     label,
     name,
     control,
-    required = true
+    required = true,
+    errors
 }: {
     label: string;
     name: string;
     control: any;
     required?: boolean;
+    errors?: any
 }) {
 
     const t = useTranslations("form");
@@ -33,6 +35,7 @@ function InputPhone({
                     />
                 )}
             />
+            {errors[name] && <Label className="text-red-500 mt-3 font-normal">{errors[name].message}</Label>}
         </div>
     )
 }

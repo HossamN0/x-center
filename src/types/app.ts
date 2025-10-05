@@ -18,7 +18,8 @@ export interface IFormField {
     | "radio"
     | "select"
     | "hidden"
-    | "textarea";
+    | "textarea"
+    | "phone";
     placeholder?: string;
     disabled?: boolean;
     autoFocus?: boolean;

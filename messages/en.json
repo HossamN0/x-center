@@ -10,9 +10,11 @@
         "ar": "Arabic"
     },
     "form": {
-        "required": "{{field}} is required",
+        "required": "{field} is required",
         "invalidemail": "Invalid email address",
-        "minlength": "Password must be at least {{length}} characters",
+        "minlength": "Password must be at least {length} characters",
+        "welcomeBack": "Welcome Back",
+        "submit": "Submit",
         "firstName": {
             "label": "First Name",
             "placeholder": "Enter your first name"
@@ -32,6 +34,10 @@
         "password": {
             "label": "Password",
             "placeholder": "Enter your password"
+        },
+        "confirmPassword": {
+            "label": "Confirm Password",
+            "placeholder": "Confirm your password"
         }
     }
 }

@@ -8,6 +8,13 @@ export enum Directions {
     RTL = 'rtl',
 }
 
+export enum InputsType {
+    TEXT = 'text',
+    PASSWORD = 'password',
+    EMAIL = 'email',
+    PHONE = 'phone',
+}
+
 export enum Routes {
     HOME = '',
     CENTERS = 'centers',
@@ -18,10 +25,10 @@ export enum Routes {
 
 export enum Pages {
     LOGIN = 'login',
-    SIGNUP = 'signup',
+    SIGNUP = 'register',
 }
 
 export enum Forms {
     LOGIN = 'login',
-    SIGNUP = 'signup',
+    SIGNUP = 'register',
 }
