@@ -1,0 +1,12 @@
+{
+    "home": "Home",
+    "centers": "Centers",
+    "about": "About Us",
+    "contact": "Contact Us",
+    "login": "Login",
+    "register": "Register",
+    "languages": {
+        "en": "English",
+        "ar": "Arabic"
+    }
+}

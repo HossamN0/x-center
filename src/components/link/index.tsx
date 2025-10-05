@@ -1,6 +1,6 @@
 'use client'
 
-import NextLink from 'next/link'
+import { Link as NextLink } from '@/i18n/navigation';
 import { HTMLAttributes, useEffect, useRef, useState } from 'react'
 
 function Link(

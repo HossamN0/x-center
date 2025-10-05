@@ -5,40 +5,43 @@ import Link from "../link"
 import { Button, buttonVariants } from "../ui/button"
 import { useState } from "react"
 import { Logs, X } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { LangSwitcher } from "./lang-switcher"
 
 
 const items = [
-    { id: crypto.randomUUID(), title: "Home", href: Routes.HOME },
-    { id: crypto.randomUUID(), title: 'Centers', href: Routes.CENTERS },
-    { id: crypto.randomUUID(), title: "About Us", href: Routes.ABOUT },
-    { id: crypto.randomUUID(), title: "Contact Us", href: Routes.CONTACT },
+    { title: "home", href: Routes.HOME },
+    { title: 'centers', href: Routes.CENTERS },
+    { title: "about", href: Routes.ABOUT },
+    { title: "contact", href: Routes.CONTACT },
 ]
 
 function Navbar() {
 
-    const [openMenu, setOpenMenu] = useState<boolean>(false)
+    const [openMenu, setOpenMenu] = useState<boolean>(false);
+    const t = useTranslations('');
 
     return (
         <nav>
             <Button
                 onClick={() => setOpenMenu(true)}
-                className="md:hidden w-fit"
+                className="lg:hidden w-fit"
                 variant={"ghost"}>
                 <Logs className="!w-6 !h-6" />
             </Button>
             <ul
-                className={`px-2 transition-all shadow-md md:shadow-none ease-in-out fixed md:static w-full top-0 bg-primary-foreground py-7 md:py-0 flex items-center flex-col md:flex-row xl:gap-16 gap-10 text-[0.95rem] font-medium
-                    ${openMenu ? 'left-0 z-50' : '-left-full'}`}
+                className={`px-2 transition-all shadow-md lg:shadow-none duration-300 ease-in-out fixed lg:static w-full h-full top-0 bg-primary-foreground py-7 lg:py-0 flex items-center flex-col lg:flex-row xl:gap-16 gap-8 text-[0.95rem] font-medium
+                    ${openMenu ? 'ltr:left-0 rtl:right-0 z-50' : 'ltr:-left-full rtl:-right-full'}`}
             >
                 <Button
                     onClick={() => setOpenMenu(false)}
-                    className="md:hidden self-end mb-0 w-fit flex-center"
+                    className="lg:hidden self-end mb-0 w-fit flex-center"
                     variant={"ghost"}>
                     <X className="!w-6 !h-6" />
                 </Button>
-                {items.map((item) =>
-                    <li key={item.id}>
-                        <Link href={`/${item.href}`}>{item.title}</Link>
+                {items.map((item, index) =>
+                    <li key={index}>
+                        <Link href={`/${item.href}`}>{t(item.title)}</Link>
                     </li>
                 )}
 
@@ -47,15 +50,16 @@ function Navbar() {
                         className={`${buttonVariants({ size: "sm" })}`}
                         href={`/${Routes.AUTH}/${Pages.LOGIN}`}
                     >
-                        Log in
+                        {t('login')}
                     </Link>
                     <Link
                         className={`${buttonVariants({ size: "sm" })}`}
                         href={`/${Routes.AUTH}/${Pages.SIGNUP}`}
                     >
-                        Sign up
+                        {t('register')}
                     </Link>
                 </div>
+                <LangSwitcher />
             </ul>
         </nav>
     )
