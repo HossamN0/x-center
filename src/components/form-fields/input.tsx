@@ -4,15 +4,15 @@ import { Label } from "../ui/label";
 function Input({
     type = "text",
     placeholder,
-    title,
-    dataName,
+    label,
+    name,
     register,
     required = true,
 }: {
     type?: string;
     placeholder: string;
-    title: string;
-    dataName: string;
+    label: string;
+    name: string;
     register: any;
     required?: boolean;
 }) {
@@ -21,14 +21,14 @@ function Input({
 
     return (
         <div>
-            <Label htmlFor={dataName} className="mb-4">{title}</Label>
+            <Label htmlFor={name} className="mb-4">{label}</Label>
             <input
-                id={dataName}
+                id={name}
                 type={type}
                 placeholder={placeholder}
                 className="p-2 rounded-md border border-gray-300 w-full"
-                {...register(dataName, {
-                    required: { value: required, message: t("required", { field: title }) },
+                {...register(name, {
+                    required: { value: required, message: t("required", { field: label }) },
                     pattern: type === "email" ? { value: /^\S+@\S+$/i, message: t('invalidemail') } : undefined,
                 })}
             />

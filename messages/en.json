@@ -12,6 +12,26 @@
     "form": {
         "required": "{{field}} is required",
         "invalidemail": "Invalid email address",
-        "minlength": "Password must be at least {{length}} characters"
+        "minlength": "Password must be at least {{length}} characters",
+        "firstName": {
+            "label": "First Name",
+            "placeholder": "Enter your first name"
+        },
+        "secondName": {
+            "label": "Second Name",
+            "placeholder": "Enter your second name"
+        },
+        "email": {
+            "label": "Email",
+            "placeholder": "Enter your email"
+        },
+        "phone": {
+            "label": "Phone Number",
+            "placeholder": "Enter your phone number"
+        },
+        "password": {
+            "label": "Password",
+            "placeholder": "Enter your password"
+        }
     }
 }

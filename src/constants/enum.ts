@@ -20,3 +20,8 @@ export enum Pages {
     LOGIN = 'login',
     SIGNUP = 'signup',
 }
+
+export enum Forms {
+    LOGIN = 'login',
+    SIGNUP = 'signup',
+}

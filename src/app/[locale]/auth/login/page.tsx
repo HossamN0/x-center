@@ -1,9 +1,14 @@
-import InputPassword from "@/components/form-fields/input-password"
+import { Forms } from "@/constants/enum"
+import useFormFields from "@/hooks/useFormFields"
 
 function LoginPage() {
+
+    const { getFormFields } = useFormFields({ form: Forms.LOGIN })
+    console.log(getFormFields())
+
     return (
         <form>
-            {/* <InputPassword type="email" placeholder="Email" title="Email" dataName="email" register={{}} /> */}
+
         </form>
     )
 }

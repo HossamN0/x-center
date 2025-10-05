@@ -4,13 +4,13 @@ import { Controller } from "react-hook-form";
 import PhoneInput from "react-phone-input-2";
 
 function InputPhone({
-    title,
-    dataName,
+    label,
+    name,
     control,
     required = true
 }: {
-    title: string;
-    dataName: string;
+    label: string;
+    name: string;
     control: any;
     required?: boolean;
 }) {
@@ -19,11 +19,11 @@ function InputPhone({
 
     return (
         <div>
-            <Label htmlFor={dataName} className="mb-4">{title}</Label>
+            <Label htmlFor={name} className="mb-4">{label}</Label>
             <Controller
-                name={dataName}
+                name={name}
                 control={control}
-                rules={{ required: { value: required, message: t("required", { field: title }) } }}
+                rules={{ required: { value: required, message: t("required", { field: label }) } }}
                 render={({ field }) => (
                     <PhoneInput
                         country={'eg'}

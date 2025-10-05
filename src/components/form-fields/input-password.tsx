@@ -8,14 +8,14 @@ import { Eye, EyeClosed } from "lucide-react";
 
 function InputPassword({
     placeholder,
-    title,
-    dataName,
+    label,
+    name,
     register,
     required = true,
 }: {
     placeholder: string;
-    title: string;
-    dataName: string;
+    label: string;
+    name: string;
     register: any;
     required?: boolean;
 }) {
@@ -25,15 +25,15 @@ function InputPassword({
 
     return (
         <div>
-            <Label htmlFor={dataName} className="mb-4">{title}</Label>
+            <Label htmlFor={name} className="mb-4">{label}</Label>
             <div className="relative">
                 <input
-                    id={dataName}
+                    id={name}
                     type={showPassword ? "text" : "password"}
                     placeholder={placeholder}
                     className="p-2 rounded-md border border-gray-300 w-full"
-                    {...register(dataName, {
-                        required: { value: required, message: t("required", { field: title }) },
+                    {...register(name, {
+                        required: { value: required, message: t("required", { field: label }) },
                         minLength: { value: 6, message: t("minlength", { length: 6 }) },
                     })}
                 />
