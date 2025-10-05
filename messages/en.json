@@ -8,5 +8,10 @@
     "languages": {
         "en": "English",
         "ar": "Arabic"
+    },
+    "form": {
+        "required": "{{field}} is required",
+        "invalidemail": "Invalid email address",
+        "minlength": "Password must be at least {{length}} characters"
     }
 }
