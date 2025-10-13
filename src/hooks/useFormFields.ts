@@ -39,13 +39,6 @@ const useFormFields = ({ form }: { form: string }) => {
             required: true
         },
         {
-            name: 'phone',
-            type: InputsType.PHONE,
-            label: t('phone.label'),
-            placeholder: t('phone.placeholder'),
-            required: true
-        },
-        {
             name: 'email',
             type: InputsType.EMAIL,
             label: t('email.label'),
@@ -53,17 +46,17 @@ const useFormFields = ({ form }: { form: string }) => {
             required: true
         },
         {
+            name: 'phone',
+            type: InputsType.PHONE,
+            label: t('phone.label'),
+            placeholder: t('phone.placeholder'),
+            required: true
+        },
+        {
             name: 'password',
             type: InputsType.PASSWORD,
             label: t('password.label'),
             placeholder: t('password.placeholder'),
-            required: true
-        },
-        {
-            name: 'confirm_password',
-            type: InputsType.PASSWORD,
-            label: t('confirmPassword.label'),
-            placeholder: t('confirmPassword.placeholder'),
             required: true
         }
     ]
