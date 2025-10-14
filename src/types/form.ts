@@ -9,4 +9,5 @@ export interface RegisterTypes {
     email: string;
     phone: string;
     password: string;
+    role: 'student' | 'admin' | 'instructor';
 }

@@ -6,6 +6,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { Directions, Languages } from "@/constants/enum";
 import { notFound } from "next/navigation";
 import { routing } from '@/i18n/routing';
+import { Toaster } from "react-hot-toast";
 
 
 export function generateStaticParams() {
@@ -48,6 +49,7 @@ export default async function RootLayout({
         className={`${locale === Languages.AR ? cairo.className : roboto.className} min-container`}
       >
         <NextIntlClientProvider>
+          <Toaster />
           <Header />
           {children}
         </NextIntlClientProvider>

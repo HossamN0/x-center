@@ -32,7 +32,7 @@ const useFormFields = ({ form }: { form: string }) => {
             autoFocus: true
         },
         {
-            name: 'second_name',
+            name: 'last_name',
             type: InputsType.TEXT,
             label: t('secondName.label'),
             placeholder: t('secondName.placeholder'),
