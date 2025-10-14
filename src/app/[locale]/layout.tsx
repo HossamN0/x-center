@@ -7,7 +7,7 @@ import { Directions, Languages } from "@/constants/enum";
 import { notFound } from "next/navigation";
 import { routing } from '@/i18n/routing';
 import { Toaster } from "react-hot-toast";
-
+import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -49,9 +49,11 @@ export default async function RootLayout({
         className={`${locale === Languages.AR ? cairo.className : roboto.className} min-container`}
       >
         <NextIntlClientProvider>
-          <Toaster />
-          <Header />
-          {children}
+          <NextAuthSessionProvider>
+            <Toaster />
+            <Header />
+            {children}
+          </NextAuthSessionProvider>
         </NextIntlClientProvider>
       </body>
     </html>

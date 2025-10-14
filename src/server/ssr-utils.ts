@@ -90,16 +90,14 @@ class SSRApiClient {
                 }
 
                 const apiError = {
-                    body,
-                    error: {
-                        status: response.status,
-                        message: errorData.message || response.statusText,
-                        errors: errorData.errors || {},
-                        raw: errorData,
-                    }
+                    // body,
+                    status: response.status,
+                    message: errorData.message || response.statusText,
+                    errors: errorData.errors || {},
+                    raw: errorData,
                 };
 
-                console.error('SSR API request failed:', apiError);
+                // console.error('SSR API request failed:', apiError);
 
                 throw apiError;
             }
@@ -108,7 +106,7 @@ class SSRApiClient {
             const result = await this.handleResponse<T>(response);
             return result.data;
         } catch (error) {
-            console.error('SSR API request failed:', error);
+            // console.error('SSR API request failed:', error);
             throw error;
         }
     }

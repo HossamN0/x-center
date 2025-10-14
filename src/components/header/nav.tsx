@@ -7,6 +7,9 @@ import { useState } from "react"
 import { Logs, X } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { LangSwitcher } from "./lang-switcher"
+import { Session } from "next-auth"
+import TruncateText from "../ui/truncateText"
+import { useClientSession } from "@/hooks/useClientSession"
 
 
 const items = [
@@ -16,10 +19,12 @@ const items = [
     { title: "contact", href: Routes.CONTACT },
 ]
 
-function Navbar() {
+function Navbar({ initialSession }: { initialSession: Session | null }) {
 
     const [openMenu, setOpenMenu] = useState<boolean>(false);
+    const session = useClientSession(initialSession);
     const t = useTranslations('');
+    console.log(session)
 
     return (
         <nav>
@@ -45,20 +50,26 @@ function Navbar() {
                     </li>
                 )}
 
-                <div className="flex items-center gap-4 *:cursor-pointer">
-                    <Link
-                        className={`${buttonVariants({ size: "sm" })}`}
-                        href={`/${Routes.AUTH}/${Pages.LOGIN}`}
-                    >
-                        {t('login')}
-                    </Link>
-                    <Link
-                        className={`${buttonVariants({ size: "sm" })}`}
-                        href={`/${Routes.AUTH}/${Pages.SIGNUP}`}
-                    >
-                        {t('register')}
-                    </Link>
-                </div>
+                {session?.data ?
+                    <p className="lg:rtl:ml-10 lg:ltr:mr-10">
+                        <TruncateText maxLength={8} text={session.data?.name!} />
+                    </p>
+                    :
+                    <div className="flex items-center gap-4 *:cursor-pointer">
+                        <Link
+                            className={`${buttonVariants({ size: "sm" })}`}
+                            href={`/${Routes.AUTH}/${Pages.LOGIN}`}
+                        >
+                            {t('login')}
+                        </Link>
+                        <Link
+                            className={`${buttonVariants({ size: "sm" })}`}
+                            href={`/${Routes.AUTH}/${Pages.SIGNUP}`}
+                        >
+                            {t('register')}
+                        </Link>
+                    </div>
+                }
                 <LangSwitcher />
             </ul>
         </nav>

@@ -32,3 +32,8 @@ export enum Forms {
     LOGIN = 'login',
     SIGNUP = 'register',
 }
+
+export enum Environment {
+    PRODUCTION = 'production',
+    DEVELOPMENT = 'development'
+}
