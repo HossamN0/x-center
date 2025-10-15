@@ -21,11 +21,16 @@ export enum Routes {
     ABOUT = 'about',
     CONTACT = 'contact',
     AUTH = 'auth',
+    INSTRUCTOR = 'instructor',
+    STUDENT = 'student'
 }
 
 export enum Pages {
     LOGIN = 'login',
     SIGNUP = 'register',
+    DASHBOARD = 'dashboard',
+    PROFILE = 'profile',
+    COURSES = 'courses',
 }
 
 export enum Forms {
@@ -36,4 +41,9 @@ export enum Forms {
 export enum Environment {
     PRODUCTION = 'production',
     DEVELOPMENT = 'development'
+}
+
+export enum Roles {
+    INSTRUCTOR = 'instructor',
+    STUDENT = 'student'
 }

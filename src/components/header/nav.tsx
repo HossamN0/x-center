@@ -24,7 +24,6 @@ function Navbar({ initialSession }: { initialSession: Session | null }) {
     const [openMenu, setOpenMenu] = useState<boolean>(false);
     const session = useClientSession(initialSession);
     const t = useTranslations('');
-    console.log(session)
 
     return (
         <nav>
