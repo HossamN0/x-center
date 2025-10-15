@@ -40,10 +40,17 @@
             "placeholder": "Confirm your password"
         }
     },
-    "isAuth":{
-        "dashboard":"Dashboard",
-        "myCourses":"My Courses",
-        "profile":"Profile",
-        "logout":"Logout"
+    "isAuth": {
+        "dashboard": "Dashboard",
+        "myCourses": "My Courses",
+        "profile": "Profile",
+        "logout": "Logout"
+    },
+    "heroSection": {
+        "title": "Welcome to our X-Center",
+        "description": "Dive into the world of technology with X-Center’s comprehensive programming and development courses."
+    },
+    "coursesContent": {
+        "recentCourses": "Recent Courses"
     }
 }

@@ -45,5 +45,12 @@
         "myCourses": "كورساتي",
         "profile": "حسابي",
         "logout": "تسجيل الخروج"
+    },
+    "heroSection": {
+        "title": "مرحبا بك في X-Center",
+        "description": "استكشف كورسات البرمجة والتطوير المتخصصة في X-Center واحصل على المهارات اللازمة لتحقيق نجاحك."
+    },
+    "coursesContent": {
+        "recentCourses": "أحدث الكورسات"
     }
 }

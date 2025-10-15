@@ -110,6 +110,10 @@
     @apply flex items-center justify-center;
   }
 
+  .p-section{
+    @apply py-11;
+  }
+
   /* layout */
 
   .container {

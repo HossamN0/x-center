@@ -40,3 +40,33 @@ export interface User {
     updated_at: string,
     roles: Roles[]
 }
+
+export interface CourseData {
+    id: number;
+    instructor_id: number;
+    title: string;
+    subtitle: string;
+    price: number;
+    image: string;
+    description: string;
+    status: "active" | "inactive";
+    created_at: string;
+    updated_at: string;
+    instructor: ApiUser;
+    reviews?: Review[];
+}
+
+export interface ApiUser {
+    id: number;
+    first_name: string;
+    last_name: string;
+    email: string;
+    phone: string;
+}
+
+export interface Review {
+    id?: number;
+    review_num?: number;
+    description?: string;
+    student?: ApiUser;
+}

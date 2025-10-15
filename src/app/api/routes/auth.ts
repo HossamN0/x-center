@@ -1,5 +1,5 @@
 import { LoginRequest, RegisterRequest } from "@/types/api";
-import request from "../axios-utils";
+import request from "@/lib/utils/axios-utils";
 
 export const RegisterAction = ({ data }: { data: RegisterRequest }) => {
     return request({ url: '/register', method: 'POST', data });
