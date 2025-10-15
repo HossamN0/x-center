@@ -34,7 +34,7 @@ function Navbar({ initialSession }: { initialSession: Session | null }) {
                 <Logs className="!w-6 !h-6" />
             </Button>
             <ul
-                className={`px-2 transition-all shadow-md lg:shadow-none duration-300 ease-in-out fixed lg:static w-full h-full top-0 bg-primary-foreground py-7 lg:py-0 flex items-center flex-col lg:flex-row xl:gap-16 gap-8 text-[0.95rem] font-medium
+                className={`px-2 transition-all shadow-md lg:shadow-none duration-300 ease-in-out fixed lg:static rtl:w-screen min-w-[160px] w-full lg:w-full h-full top-0 bg-primary-foreground py-7 lg:py-0 flex items-center flex-col lg:flex-row xl:gap-16 gap-8 text-[0.95rem] font-medium
                     ${openMenu ? 'ltr:left-0 rtl:right-0 z-50' : 'ltr:-left-full rtl:-right-full'}`}
             >
                 <Button

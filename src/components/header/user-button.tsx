@@ -45,11 +45,11 @@ function UserButton({ session }: { session: any }) {
             </Button>
             {profileMenu &&
                 <>
-                    <ul className="lg:absolute top-[calc(100%+7px)] lg:left-1/2 lg:-translate-x-1/2 lg:bg-primary-foreground min-w-40 rounded-md py-3">
+                    <ul className="lg:absolute top-[calc(100%+7px)] lg:left-1/2 lg:-translate-x-1/2 lg:bg-primary-foreground min-w-40 rounded-md py-3 text-center lg:text-start">
                         {menu.map((item, index) =>
                             <li key={index}><Link href={item.route} className="hover:bg-primary lg:px-5 py-2 cursor-pointer block">{t(item.label)}</Link></li>
                         )}
-                        <li><button onClick={() => signOut()} className="hover:bg-primary lg:px-5 py-2 cursor-pointer w-full text-start">{t('logout')}</button></li>
+                        <li><button onClick={() => signOut()} className="hover:bg-primary lg:px-5 py-2 cursor-pointer w-full lg:text-start">{t('logout')}</button></li>
                     </ul>
                 </>
             }
