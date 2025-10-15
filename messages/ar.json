@@ -5,6 +5,10 @@
     "contact": "اتصل بنا",
     "login": "تسجيل الدخول",
     "register": "تسجيل جديد",
+    "search": {
+        "placeholder": "بحث ...",
+        "search": "بحث"
+    },
     "languages": {
         "en": "الإنجليزية",
         "ar": "العربية"
@@ -52,6 +56,12 @@
     },
     "coursesContent": {
         "recentCourses": "أحدث الكورسات",
-        "allcourses":"جميع الكورسات"
+        "allcourses": "جميع الكورسات",
+        "noCourses": "لا يوجد كورسات"
+    },
+    "pagination": {
+        "previous": "السابق",
+        "next": "التالي",
+        "page": "صفحة"
     }
 }

@@ -5,6 +5,10 @@
     "contact": "Contact Us",
     "login": "Login",
     "register": "Register",
+    "search": {
+        "placeholder": "Search ...",
+        "search": "Search"
+    },
     "languages": {
         "en": "English",
         "ar": "Arabic"
@@ -52,6 +56,12 @@
     },
     "coursesContent": {
         "recentCourses": "Recent Courses",
-        "allcourses":"All Courses"
+        "allcourses": "All Courses",
+        "noCourses": "No Courses Found"
+    },
+    "pagination": {
+        "previous": "Previous",
+        "next": "Next",
+        "page": "Page"
     }
 }

@@ -2,8 +2,8 @@ import { ChevronRight } from "lucide-react"
 import Image from "next/image"
 import { Routes } from "@/constants/enum"
 import { CourseData } from "@/types/api"
-import TruncateText from "./truncateText"
 import Link from "../link"
+import { truncateText } from "./truncateText"
 
 function CourseCard(
     {
@@ -29,19 +29,19 @@ function CourseCard(
                 <div className="absolute w-full h-full left-0 top-0 bg-black opacity-50 -z-10"></div>
                 <div className="flex justify-between items-start text-gray-300">
                     <div>
-                        <h3 className="text-lg font-semibold">{TruncateText({ text: `${data?.title}`, maxLength: 19 })}</h3>
-                        <p className="text-xs text-gray-400">{TruncateText({ text: `${data?.subtitle}`, maxLength: 26 })}</p>
+                        <h3 className="text-lg font-semibold">{truncateText(`${data?.title}`, 19)}</h3>
+                        <p className="text-xs text-gray-400">{truncateText(`${data?.subtitle}`, 26)}</p>
                     </div>
                     <span className="text-[10px] text-gray-400">{new Date(data?.created_at).getFullYear()}</span>
                 </div>
 
                 <div className="text-sm text-gray-400 mt-4 break-words">
-                    {TruncateText({ text: data?.description, maxLength: 200 })}
+                    {truncateText(data?.description, 200)}
                 </div>
 
                 <div className="flex justify-between items-center mt-4">
                     <div className="text-xs text-white bg-gradient-to-r from-purple-500 to-orange-400 py-1.5 px-3 rounded-full transition-all duration-300 hover:brightness-110">
-                        {TruncateText({ text: name, maxLength: 10 })}
+                        {truncateText(name, 10)}
                     </div>
 
                     <Link href={`/${Routes.COURSES}/${data?.id}`} className="rtl:scale-x-[-1] w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white cursor-pointer transition-all duration-300">

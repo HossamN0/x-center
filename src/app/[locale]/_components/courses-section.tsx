@@ -33,7 +33,11 @@ async function CourseSection() {
                     <TypographyH2 className="mb-8 text-white">{t('recentCourses')}</TypographyH2>
                     <Link href={`/${Routes.COURSES}`} className={`${buttonVariants()}`}>{t('allcourses')}</Link>
                 </div>
-                <SwiperCourses data={data} />
+                {data?.data?.length > 0 ?
+                    <SwiperCourses data={data} />
+                    :
+                    <TypographyH2 className='flex-center min-h-[400px] text-white'>{t('noCourses')}</TypographyH2>
+                }
             </div>
         </section>
     )

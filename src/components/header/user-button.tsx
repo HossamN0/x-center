@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Button } from "../ui/button"
-import TruncateText from "../ui/truncateText"
+import { truncateText } from "../ui/truncateText"
 import { ChevronDown } from "lucide-react";
 import Link from "../link";
 import { Pages, Roles, Routes } from "@/constants/enum";
@@ -40,7 +40,7 @@ function UserButton({ session }: { session: any }) {
     return (
         <div ref={menuRef} className="relative lg:rtl:ml-10 lg:ltr:mr-10 flex items-center flex-col ">
             <Button onClick={handleMenu}>
-                <TruncateText maxLength={8} text={session?.data?.name!} />
+                {truncateText(session?.data?.name!, 8)}
                 <ChevronDown className={`!w-4 !h-4 transition-all duration-100 ease-in-out ${profileMenu ? 'rotate-180' : ''}`} />
             </Button>
             {profileMenu &&

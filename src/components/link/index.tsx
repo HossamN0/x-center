@@ -11,6 +11,7 @@ function Link(
     }: {
         href: string;
         children: React.ReactNode;
+        ref?: any
     } & HTMLAttributes<HTMLAnchorElement>
 ) {
 

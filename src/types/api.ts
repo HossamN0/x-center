@@ -70,3 +70,10 @@ export interface Review {
     description?: string;
     student?: ApiUser;
 }
+
+export interface PaginationType {
+    current_page: number,
+    last_page: number,
+    total: number,
+    per_page: number
+}
