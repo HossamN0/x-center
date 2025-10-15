@@ -51,6 +51,7 @@
         "description": "استكشف كورسات البرمجة والتطوير المتخصصة في X-Center واحصل على المهارات اللازمة لتحقيق نجاحك."
     },
     "coursesContent": {
-        "recentCourses": "أحدث الكورسات"
+        "recentCourses": "أحدث الكورسات",
+        "allcourses":"جميع الكورسات"
     }
 }

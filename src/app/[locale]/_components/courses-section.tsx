@@ -1,6 +1,9 @@
+import Link from '@/components/link'
 import DotGrid from '@/components/react-bits/DotGrid'
+import { buttonVariants } from '@/components/ui/button'
 import SwiperCourses from '@/components/ui/swiper-course'
 import { TypographyH2 } from '@/components/ui/typography'
+import { Routes } from '@/constants/enum'
 import { fetchSSR } from '@/lib/utils/fetch-ssr'
 import { getTranslations } from "next-intl/server"
 
@@ -26,7 +29,10 @@ async function CourseSection() {
             </div>
 
             <div className="relative z-10 content-container">
-                <TypographyH2 className="mb-8 text-white">{t('recentCourses')}</TypographyH2>
+                <div className='flex justify-between items-center'>
+                    <TypographyH2 className="mb-8 text-white">{t('recentCourses')}</TypographyH2>
+                    <Link href={`/${Routes.COURSES}`} className={`${buttonVariants()}`}>{t('allcourses')}</Link>
+                </div>
                 <SwiperCourses data={data} />
             </div>
         </section>

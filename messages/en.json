@@ -51,6 +51,7 @@
         "description": "Dive into the world of technology with X-Center’s comprehensive programming and development courses."
     },
     "coursesContent": {
-        "recentCourses": "Recent Courses"
+        "recentCourses": "Recent Courses",
+        "allcourses":"All Courses"
     }
 }

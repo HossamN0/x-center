@@ -1,13 +1,9 @@
-"use client"
-
 import { ChevronRight } from "lucide-react"
 import Image from "next/image"
-import React from "react"
-import { Button } from "./button"
-import { useRouter } from "next/navigation"
 import { Routes } from "@/constants/enum"
 import { CourseData } from "@/types/api"
 import TruncateText from "./truncateText"
+import Link from "../link"
 
 function CourseCard(
     {
@@ -19,13 +15,13 @@ function CourseCard(
     }
 ) {
 
-    const router = useRouter();
     const name = `${data?.instructor?.first_name} ${data?.instructor?.last_name}`
+
     return (
         <div className={`relative mx-auto ${className} rounded-2xl border border-white/20 overflow-hidden group transition-transform duration-300 hover:scale-[1.03]`}>
             <div className="absolute inset-0 p-[2px] bg-gradient-to-tr from-purple-500 to-orange-400 rounded-2xl">
                 <div className="relative h-full rounded-2xl overflow-hidden">
-                    <Image alt="" src={'/assets/images/bg-auth.webp'} layout="fill" objectFit="cover" />
+                    <Image alt={data?.title} src={data?.image} layout="fill" objectFit="cover" />
                 </div>
             </div>
 
@@ -48,9 +44,9 @@ function CourseCard(
                         {TruncateText({ text: name, maxLength: 10 })}
                     </div>
 
-                    <Button onClick={() => router.push(`/${Routes.COURSES}/${data?.id}`)} className="rtl:scale-x-[-1] w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white cursor-pointer transition-all duration-300">
+                    <Link href={`/${Routes.COURSES}/${data?.id}`} className="rtl:scale-x-[-1] w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white cursor-pointer transition-all duration-300">
                         <ChevronRight />
-                    </Button>
+                    </Link>
                 </div>
             </div>
         </div>
