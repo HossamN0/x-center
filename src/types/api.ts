@@ -1,22 +1,19 @@
-export type ApiFieldErrors = Record<string, string[]>;
-export interface ApiErrorObject {
-    status?: number;
-    message: string;
-    errors?: ApiFieldErrors;
-    body?: unknown;
+export interface RegisterRequest {
+    first_name: string;
+    second_name: string;
+    email: string;
+    phone: string;
+    password: string;
+    role: 'student' | 'admin' | 'instructor';
 }
 
-export type ActionResult<TData> =
-    | { success: true; data: TData }
-    | { success: false; error: string; errors?: ApiFieldErrors; status?: number };
+export interface RegisterResponse {
+    message: string;
+}
 
-export function isApiErrorObject(value: unknown): value is ApiErrorObject {
-    if (!value || typeof value !== 'object') return false;
-    const maybe = value as any;
-    return (
-        typeof maybe.status === 'number' &&
-        typeof maybe.message === 'string'
-    );
+export interface LoginRequest {
+    email: string;
+    password: string;
 }
 
 

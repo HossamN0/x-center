@@ -8,6 +8,7 @@ import { notFound } from "next/navigation";
 import { routing } from '@/i18n/routing';
 import { Toaster } from "react-hot-toast";
 import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
+import ReactQueryProvider from "@/providers/react-query";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -50,9 +51,11 @@ export default async function RootLayout({
       >
         <NextIntlClientProvider>
           <NextAuthSessionProvider>
-            <Toaster />
-            <Header />
-            {children}
+            <ReactQueryProvider>
+              <Toaster />
+              <Header />
+              {children}
+            </ReactQueryProvider>
           </NextAuthSessionProvider>
         </NextIntlClientProvider>
       </body>

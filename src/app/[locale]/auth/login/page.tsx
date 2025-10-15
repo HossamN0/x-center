@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import Loader from "@/components/ui/loader";
 import { Forms, Routes } from "@/constants/enum"
 import useFormFields from "@/hooks/useFormFields"
-import { LoginTypes } from "@/types/form";
+import { LoginRequest } from "@/types/api";
 import { signIn } from "next-auth/react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
@@ -21,8 +21,8 @@ function LoginPage() {
     const [errorMsg, setErrorMsg] = useState<string>('');
     const [loading, setLoading] = useState<boolean>(false)
     const { getFormFields } = useFormFields({ form: Forms.LOGIN })
-    const { register, handleSubmit, control, formState: { errors } } = useForm<LoginTypes>();
-    const onSubmit: SubmitHandler<LoginTypes> = async (data) => {
+    const { register, handleSubmit, control, formState: { errors } } = useForm<LoginRequest>();
+    const onSubmit: SubmitHandler<LoginRequest> = async (data) => {
         setLoading(true)
         setErrorMsg('')
         try {

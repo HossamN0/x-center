@@ -1,8 +1,8 @@
 import { Environment, Pages, Routes } from "@/constants/enum";
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
-import { LoginAction } from "./actions/auth";
 import { User as ApiUser } from "@/types/api";
+import { LoginAction } from "./routes/auth";
 
 declare module "next-auth" {
     interface User {
@@ -53,8 +53,7 @@ export const authOptions: NextAuthOptions = {
                 password: { label: 'password', type: 'password' }
             },
             authorize: async (credentials: any) => {
-                const res = await LoginAction(credentials);
-                if (!res.success) throw new Error(res.error);
+                const res = await LoginAction({ data: credentials });
                 return res?.data as any;
             }
         })

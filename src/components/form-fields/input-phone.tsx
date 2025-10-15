@@ -32,7 +32,7 @@ function InputPhone({
                         <PhoneInput
                             country={'eg'}
                             value={field.value}
-                            onChange={field.onChange}
+                            onChange={(value) => field.onChange(`+${value}`)}
                             onlyCountries={['eg', 'sa']}
                             specialLabel=""
                             inputClass="!rounded-md !border !border-gray-300 !w-full !bg-transparent"

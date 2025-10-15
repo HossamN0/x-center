@@ -13,16 +13,23 @@ export default withAuth(
         const intlResponse = intlMiddleware(req);
 
         const pathname = req.nextUrl.pathname;
+        const locale = req.nextUrl.pathname.split("/")[1];
+        const supportedLocales = ["en", "ar"];
+
+        const normalizedPathname = supportedLocales.includes(locale)
+            ? pathname.replace(`/${locale}`, "")
+            : pathname;
+
         const isAuth = await getToken({ req });
         const role = isAuth?.role
 
         const instructorRoutes = [Routes.INSTRUCTOR]
-        const isInstructorRoute = instructorRoutes.some((route) => pathname.startsWith(`/${route}`));
+        const isInstructorRoute = instructorRoutes.some((route) => normalizedPathname.startsWith(`/${route}`));
 
         const studentRoutes = [Routes.STUDENT]
-        const isStudentRoute = studentRoutes.some((route) => pathname.startsWith(`/${route}`));
+        const isStudentRoute = studentRoutes.some((route) => normalizedPathname.startsWith(`/${route}`));
 
-        const isAuthRoute = pathname.startsWith(`/${Routes.AUTH}`);
+        const isAuthRoute = normalizedPathname.startsWith(`/${Routes.AUTH}`);
 
         if (isAuth && isAuthRoute) {
             return NextResponse.redirect(

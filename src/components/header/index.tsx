@@ -1,7 +1,7 @@
 import { getServerSession, Session } from "next-auth"
 import Link from "../link"
 import Navbar from "./nav"
-import { authOptions } from "@/server/auth"
+import { authOptions } from "@/app/api/auth"
 
 async function Header() {
     const initialSession: Session | null = await getServerSession(authOptions);
