@@ -1,6 +1,6 @@
 {
     "home": "Home",
-    "centers": "Centers",
+    "courses": "Courses",
     "about": "About Us",
     "contact": "Contact Us",
     "login": "Login",
@@ -39,5 +39,11 @@
             "label": "Confirm Password",
             "placeholder": "Confirm your password"
         }
+    },
+    "isAuth":{
+        "dashboard":"Dashboard",
+        "myCourses":"My Courses",
+        "profile":"Profile",
+        "logout":"Logout"
     }
 }

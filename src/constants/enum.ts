@@ -17,7 +17,7 @@ export enum InputsType {
 
 export enum Routes {
     HOME = '',
-    CENTERS = 'centers',
+    COURSES = 'courses',
     ABOUT = 'about',
     CONTACT = 'contact',
     AUTH = 'auth',

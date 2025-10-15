@@ -8,13 +8,13 @@ import { Logs, X } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { LangSwitcher } from "./lang-switcher"
 import { Session } from "next-auth"
-import TruncateText from "../ui/truncateText"
 import { useClientSession } from "@/hooks/useClientSession"
+import UserButton from "./user-button"
 
 
 const items = [
     { title: "home", href: Routes.HOME },
-    { title: 'centers', href: Routes.CENTERS },
+    { title: 'courses', href: Routes.COURSES },
     { title: "about", href: Routes.ABOUT },
     { title: "contact", href: Routes.CONTACT },
 ]
@@ -50,9 +50,7 @@ function Navbar({ initialSession }: { initialSession: Session | null }) {
                 )}
 
                 {session?.data ?
-                    <p className="lg:rtl:ml-10 lg:ltr:mr-10">
-                        <TruncateText maxLength={8} text={session.data?.name!} />
-                    </p>
+                    <UserButton session={session} />
                     :
                     <div className="flex items-center gap-4 *:cursor-pointer">
                         <Link

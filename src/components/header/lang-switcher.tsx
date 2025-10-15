@@ -49,7 +49,8 @@ export function LangSwitcher() {
     return (
         <div ref={menuRef}>
             <Button onClick={() => setOpenMenu(!openMenu)} className="w-full lg:w-fit">
-                {locale === Languages.AR ? t('ar') : t('en')} <ChevronDown className={`!w-4 !h-4 transition-all duration-100 ease-in-out ${openMenu ? 'rotate-180' : ''}`} />
+                {locale === Languages.AR ? t('ar') : t('en')} 
+                <ChevronDown className={`!w-4 !h-4 transition-all duration-100 ease-in-out ${openMenu ? 'rotate-180' : ''}`} />
             </Button>
 
             {openMenu &&
