@@ -42,6 +42,12 @@
         "confirmPassword": {
             "label": "تاكيد كلمة المرور",
             "placeholder": "تاكيد كلمة المرور"
+        },
+        "rating": {
+            "description": "الوصف",
+            "descPlaceholder": "اكتب تقييمك هنا...",
+            "rating": "التقييم مطلوب",
+            "rating_success": "تم ارسال التقييم بنجاح"
         }
     },
     "isAuth": {
@@ -59,7 +65,10 @@
         "allcourses": "جميع الكورسات",
         "noCourses": "لا يوجد كورسات",
         "egp": "{price} جنيه",
-        "instructor": "المدرب"
+        "instructor": "المدرب",
+        "enroll": "سجل الان",
+        "pending": "بانتظار الموافقة",
+        "enroll_pending": "لقد قمت بالتسجيل في هذا الكورس، وهو الآن في انتظار الموافقة."
     },
     "pagination": {
         "previous": "السابق",

@@ -53,6 +53,7 @@ export interface CourseData {
     created_at: string;
     updated_at: string;
     instructor: ApiUser;
+    enroll?: 'pending' | 'accepted' | 'rejected' | null;
     reviews?: Review[];
 }
 
@@ -76,4 +77,10 @@ export interface PaginationType {
     last_page: number,
     total: number,
     per_page: number
+}
+
+export interface ReviewFormProps {
+    course_id: number;
+    description: string;
+    review_num: number;
 }

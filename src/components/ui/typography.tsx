@@ -78,7 +78,7 @@ export function TypographyP({
     className?: string;
 }) {
     return (
-        <p className={cn("leading-7 [&:not(:first-child)]:mt-6", className)}>
+        <p className={cn("leading-7 [&:not(:first-child)]:mt-6 break-words whitespace-pre-line break-all", className)}>
             {children}
         </p>
     );

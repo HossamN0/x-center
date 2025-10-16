@@ -42,6 +42,12 @@
         "confirmPassword": {
             "label": "Confirm Password",
             "placeholder": "Confirm your password"
+        },
+        "rating":{
+            "description":"Description",
+            "descPlaceholder":"Write your review here...",
+            "rating":"Product Rating",
+            "rating_success":"Review submitted successfully"
         }
     },
     "isAuth": {
@@ -59,7 +65,10 @@
         "allcourses": "All Courses",
         "noCourses": "No Courses Found",
         "egp": "{price} EGP",
-        "instructor": "Instructor"
+        "instructor": "Instructor",
+        "enroll": "Enroll Now",
+        "pending": "Pending Approval",
+        "enroll_pending": "You have enrolled in this course, and it is currently pending approval."
     },
     "pagination": {
         "previous": "Previous",

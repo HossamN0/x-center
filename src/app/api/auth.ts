@@ -3,7 +3,6 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials"
 import { User as ApiUser } from "@/types/api";
 import { LoginAction } from "./routes/auth";
-import { signOut } from "next-auth/react";
 
 declare module "next-auth" {
     interface User {
@@ -16,7 +15,8 @@ declare module "next-auth" {
         access_token: string,
         refresh_token: string
         name: string
-        role: string
+        role: string;
+        error?: string;
     }
 }
 
@@ -35,11 +35,17 @@ async function refreshAccessToken(token: any) {
         })
 
         const newTokens = await res.json();
-        if (!res.ok) {
-            signOut({ callbackUrl: `/${Routes.AUTH}/${Pages.LOGIN}` });
+
+        if (!res.ok || !newTokens.access_token) {
+            console.error("Refresh failed:", newTokens);
+            return {
+                ...token,
+                error: "RefreshAccessTokenError",
+                access_token: null,
+                refresh_token: null,
+            };
         }
-        console.log('Refreshed tokens:', newTokens);
-        console.log('res:', newTokens.access_token);
+
         return {
             ...token,
             access_token: newTokens.access_token,
@@ -47,8 +53,12 @@ async function refreshAccessToken(token: any) {
             accessTokenExpires: Date.now() + (60 * 60 * 1000),
         }
     } catch (error) {
-        console.error('Error refreshing access token:', error);
-        signOut({ callbackUrl: `/${Routes.AUTH}/${Pages.LOGIN}` });
+        return {
+            ...token,
+            error: "RefreshAccessTokenError",
+            access_token: null,
+            refresh_token: null,
+        };
     }
 }
 
@@ -80,6 +90,10 @@ export const authOptions: NextAuthOptions = {
             session.refresh_token = token.refresh_token as string;
             session.name = token.name as string;
             session.role = token.role as string;
+
+            if (token.error === "RefreshAccessTokenError") {
+                session.error = "RefreshAccessTokenError";
+            }
             return session;
         }
     },

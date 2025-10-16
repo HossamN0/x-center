@@ -4,6 +4,9 @@ import CourseInstructor from "./_components/course_instructor";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CourseReviews from "./_components/course_reviews";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/api/auth";
+import ReviewForm from "./_components/review-form";
 
 export async function generateMetadata({
     params,
@@ -52,13 +55,18 @@ async function CoursePage({
 
     const { id } = await params;
     const data = await fetchSSR(`/course/${id}`);
+    const session = await getServerSession(authOptions);
     if (data?.data?.length === 0) notFound();
+
     return (
         <main>
-            <CourseDetails data={data?.data} />
+            <CourseDetails session={session?.user ?? null} data={data?.data} />
             <CourseInstructor data={data?.data?.instructor} />
             {data?.data?.reviews?.length > 0 &&
                 <CourseReviews data={data?.data?.reviews} />
+            }
+            {(data?.data?.enroll && data?.data?.enroll === 'accepted') &&
+                < ReviewForm course_id={data?.data?.id} />
             }
         </main>
     )

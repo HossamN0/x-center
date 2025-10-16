@@ -106,11 +106,15 @@
     @apply bg-background text-foreground;
   }
 
+  image {
+    @apply object-center object-cover;
+  }
+
   .flex-center {
     @apply flex items-center justify-center;
   }
 
-  .p-section{
+  .p-section {
     @apply py-11;
   }
 

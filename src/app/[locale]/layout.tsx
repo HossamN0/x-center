@@ -9,6 +9,7 @@ import { routing } from '@/i18n/routing';
 import { Toaster } from "react-hot-toast";
 import NextAuthSessionProvider from "@/providers/NextAuthSessionProvider";
 import ReactQueryProvider from "@/providers/react-query";
+import AutoSignOutProvider from "@/providers/AutoSignOutProvider";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -43,7 +44,6 @@ export default async function RootLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
-
   return (
     <html lang={locale} dir={locale === Languages.AR ? Directions.RTL : Directions.LTR}>
       <body
@@ -54,6 +54,7 @@ export default async function RootLayout({
             <ReactQueryProvider>
               <Toaster />
               <Header />
+              <AutoSignOutProvider />
               {children}
             </ReactQueryProvider>
           </NextAuthSessionProvider>
