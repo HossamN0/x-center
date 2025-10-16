@@ -9,7 +9,7 @@ import { getTranslations } from "next-intl/server"
 
 async function CourseSection() {
 
-    const data = await fetchSSR('/course');
+    const data = await fetchSSR('/course?limit=6');
     const t = await getTranslations('coursesContent')
 
     return (
