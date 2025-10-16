@@ -1,13 +1,15 @@
 import RatingStars from "@/components/ui/ratingStars"
 import { TypographyH2, TypographyP } from "@/components/ui/typography"
 import { Review } from "@/types/api"
+import { useTranslations } from "next-intl";
 
 function CourseReviews({ data }: { data: Review[] }) {
+    const t = useTranslations('coursesContent');
     return (
         <section>
             <div className="content-container p-section">
                 <div>
-                    <TypographyH2>Reviews</TypographyH2>
+                    <TypographyH2>{t('reviews')}</TypographyH2>
                     <ul className="text-white space-y-5">
                         {data?.map((review) => (
                             <li key={review?.id} className="bg-primary-foreground rounded-2xl flex-center flex-col gap-4 p-6 md:p-10">

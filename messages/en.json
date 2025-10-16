@@ -43,11 +43,11 @@
             "label": "Confirm Password",
             "placeholder": "Confirm your password"
         },
-        "rating":{
-            "description":"Description",
-            "descPlaceholder":"Write your review here...",
-            "rating":"Product Rating",
-            "rating_success":"Review submitted successfully"
+        "rating": {
+            "description": "Description",
+            "descPlaceholder": "Write your review here...",
+            "rating": "Product Rating",
+            "rating_success": "Review submitted successfully"
         }
     },
     "isAuth": {
@@ -68,7 +68,9 @@
         "instructor": "Instructor",
         "enroll": "Enroll Now",
         "pending": "Pending Approval",
-        "enroll_pending": "You have enrolled in this course, and it is currently pending approval."
+        "enroll_pending": "You have enrolled in this course, and it is currently pending approval.",
+        "chapters": "Chapters",
+        "reviews": "Reviews"
     },
     "pagination": {
         "previous": "Previous",

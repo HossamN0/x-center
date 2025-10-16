@@ -55,6 +55,14 @@ export interface CourseData {
     instructor: ApiUser;
     enroll?: 'pending' | 'accepted' | 'rejected' | null;
     reviews?: Review[];
+    chapters?: Chapter[];
+}
+
+export interface Chapter {
+    id: number;
+    course_id: number;
+    title: string;
+    content: string;
 }
 
 export interface ApiUser {
