@@ -4,6 +4,7 @@ import { Routes } from "@/constants/enum"
 import { CourseData } from "@/types/api"
 import Link from "../link"
 import { truncateText } from "./truncateText"
+import { useTranslations } from "next-intl"
 
 function CourseCard(
     {
@@ -16,7 +17,7 @@ function CourseCard(
 ) {
 
     const name = `${data?.instructor?.first_name} ${data?.instructor?.last_name}`
-
+    const t = useTranslations('coursesContent')
     return (
         <div className={`relative mx-auto ${className} rounded-2xl border border-white/20 overflow-hidden group transition-transform duration-300 hover:scale-[1.03]`}>
             <div className="absolute inset-0 p-[2px] bg-gradient-to-tr from-purple-500 to-orange-400 rounded-2xl">
@@ -41,7 +42,7 @@ function CourseCard(
 
                 <div className="flex justify-between items-center mt-4">
                     <div className="text-xs text-white bg-gradient-to-r from-purple-500 to-orange-400 py-1.5 px-3 rounded-full transition-all duration-300 hover:brightness-110">
-                        {truncateText(name, 10)}
+                        {t('egp', { price: data?.price })}
                     </div>
 
                     <Link href={`/${Routes.COURSES}/${data?.id}`} className="rtl:scale-x-[-1] w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-white cursor-pointer transition-all duration-300">

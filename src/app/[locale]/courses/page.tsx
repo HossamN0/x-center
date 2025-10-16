@@ -17,7 +17,7 @@ async function CoursesPage({
     const search = params.search || "";
     const t = await getTranslations()
 
-    const data = await fetchSSR(`/course?page=${page}&limit=8&search=${search}`);
+    const data = await fetchSSR(`/course?page=${page}&limit=6&search=${search}`);
 
     return (
         <section className="p-section relative min-h-screen bg-primary-foreground overflow-hidden">

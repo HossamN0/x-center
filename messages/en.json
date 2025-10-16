@@ -57,7 +57,9 @@
     "coursesContent": {
         "recentCourses": "Recent Courses",
         "allcourses": "All Courses",
-        "noCourses": "No Courses Found"
+        "noCourses": "No Courses Found",
+        "egp": "{price} EGP",
+        "instructor": "Instructor"
     },
     "pagination": {
         "previous": "Previous",

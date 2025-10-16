@@ -57,7 +57,9 @@
     "coursesContent": {
         "recentCourses": "أحدث الكورسات",
         "allcourses": "جميع الكورسات",
-        "noCourses": "لا يوجد كورسات"
+        "noCourses": "لا يوجد كورسات",
+        "egp": "{price} جنيه",
+        "instructor": "المدرب"
     },
     "pagination": {
         "previous": "السابق",
