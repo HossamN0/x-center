@@ -70,7 +70,10 @@
         "pending": "Pending Approval",
         "enroll_pending": "You have enrolled in this course, and it is currently pending approval.",
         "chapters": "Chapters",
-        "reviews": "Reviews"
+        "reviews": "Reviews",
+        "exam": "Exam",
+        "gotoexam": "Go to Exam",
+        "exmapassed": "You have passed the exam successfully"
     },
     "pagination": {
         "previous": "Previous",

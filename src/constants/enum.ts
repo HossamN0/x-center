@@ -31,6 +31,7 @@ export enum Pages {
     DASHBOARD = 'dashboard',
     PROFILE = 'profile',
     COURSES = 'courses',
+    EXAM = 'exam'
 }
 
 export enum Forms {

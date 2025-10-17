@@ -63,6 +63,29 @@ export interface Chapter {
     course_id: number;
     title: string;
     content: string;
+    exam: Exam
+}
+
+export interface Exam {
+    id: number,
+    chapter_id: number,
+    status: 'not_started' | 'inprogress' | 'completed'
+    degree?: boolean
+    questions: Question[]
+}
+
+export interface Question {
+    id: number,
+    exam_id: number,
+    question: string,
+    image?: string,
+    answers: Answer[]
+}
+
+export interface Answer {
+    id: number,
+    question_id: number,
+    answer: string
 }
 
 export interface ApiUser {

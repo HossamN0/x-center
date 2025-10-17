@@ -59,7 +59,6 @@ async function CoursePage({
     const session = await getServerSession(authOptions);
     if (data?.data?.length === 0) notFound();
     const enrolled = (data?.data?.enroll && data?.data?.enroll === 'accepted')
-    console.log('course data', data?.data?.chapters);
     return (
         <main>
             <CourseDetails session={session?.user ?? null} data={data?.data} />
