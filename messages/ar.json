@@ -48,7 +48,8 @@
             "descPlaceholder": "اكتب تقييمك هنا...",
             "rating": "التقييم مطلوب",
             "rating_success": "تم ارسال التقييم بنجاح"
-        }
+        },
+        "your_score": "لقد اجتزت الاختبار بنجاح بدرجة: {score}"
     },
     "isAuth": {
         "dashboard": "لوحة القيادة",

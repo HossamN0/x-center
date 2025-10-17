@@ -16,7 +16,6 @@ function ReviewForm({ course_id }: { course_id: number }) {
         defaultValues: { course_id: course_id }
     });
     const onSubmit: SubmitHandler<ReviewFormProps> = async (data) => {
-        console.log(data)
         const res = await courseReview({ data });
         if (res?.error) {
             return toast.error(res?.error);

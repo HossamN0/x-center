@@ -48,7 +48,8 @@
             "descPlaceholder": "Write your review here...",
             "rating": "Product Rating",
             "rating_success": "Review submitted successfully"
-        }
+        },
+        "your_score": "You have passed the exam successfully with: {score}"
     },
     "isAuth": {
         "dashboard": "Dashboard",

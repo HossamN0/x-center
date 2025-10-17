@@ -34,6 +34,9 @@ async function refreshAccessToken(token: any) {
             },
         })
 
+        console.log('access token', token.access_token);
+        console.log('refresh token', token.refresh_token);
+
         const newTokens = await res.json();
 
         if (!res.ok || !newTokens.access_token) {
@@ -50,7 +53,7 @@ async function refreshAccessToken(token: any) {
             ...token,
             access_token: newTokens.access_token,
             refresh_token: newTokens.refresh_token,
-            accessTokenExpires: Date.now() + (60 * 60 * 1000),
+            accessTokenExpires: Date.now() + (23 * 60 * 60 * 1000),
         }
     } catch (error) {
         return {

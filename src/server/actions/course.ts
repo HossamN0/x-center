@@ -51,3 +51,47 @@ export const courseReview = async ({ data }: { data: ReviewFormProps }) => {
         return { success: false, error: error instanceof Error ? error.message : 'Unknown error' };
     }
 }
+
+export const submitExam = async ({ data }: { data: any }) => {
+    const session = await getServerSession(authOptions);
+    const formData = new FormData();
+
+    Object?.entries(data).forEach(([key, value]) => {
+        if (Array.isArray(value)) {
+            value.forEach((v, i) => {
+                if (typeof v === "object" && v !== null) {
+                    Object.entries(v).forEach(([subKey, subVal]) => {
+                        formData.append(`${key}[${i}][${subKey}]`, subVal as any);
+                    });
+                } else {
+                    formData.append(`${key}[${i}]`, v as any);
+                }
+            });
+        } else if (typeof value === "object" && value !== null) {
+            Object.entries(value).forEach(([subKey, subVal]) => {
+                formData.append(`${key}[${subKey}]`, subVal as any);
+            });
+        } else {
+            formData.append(key, value as any);
+        }
+    });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/exam/submit`, {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${session?.access_token}`,
+        },
+    })
+    if (!res.ok) {
+        const errData = await res.json();
+        if (errData) return {
+            success: false,
+            ...((errData?.your_score !== undefined && errData?.your_score !== null) && { your_score: errData?.your_score }),
+            message: errData?.message
+        };
+    }
+
+    const result = await res.json();
+    return { success: true, data: result };
+}
